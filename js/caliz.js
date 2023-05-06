@@ -13,7 +13,7 @@ AFRAME.registerComponent('on-mouseenter', {
                 var modalContent = `
     <div style="text-align: center;">
       <h1>Catedral de Nuestra Señora del Rosario (Paraná)</h1>
-      <img src="../assets/Exterior2.jpg" style="width: 100%;">
+      <img src="https://4.bp.blogspot.com/-22kpah68LaM/VtM0Nj1KunI/AAAAAAAAcUI/6oMU4WIc6EM/s1600/042_42.jpg" style="width: 100%;">
     </div>
   `
                 // Mostrar el modal informativo
