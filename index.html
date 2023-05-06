@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Escena 2</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/change-scene.js"></script>
+    <script src="js/caliz.js"></script>
+</head>
+
+<body>
+
+    <a-scene>
+        <a-assets>
+            <img id="exterior" src="assets/Exterior.jpg" alt="exterior"></img>
+            <img id="interior" src="assets/Interior.jpg" alt="exterior"></img>
+            <img id="interior2" src="assets/Interior2.jpg" alt="exterior"></img>
+            <audio id="campanas" src="assets/Campanas.mp3" preload="auto" autoplay loop></audio>
+            <audio id="iglesia" src="assets/Iglesia.mp3" preload="auto"></audio>
+            <img id="caliz" src="assets/caliz.webp"></img>
+        </a-assets>
+
+        <a-camera>
+            <a-cursor raycaster="objects: .options">
+
+            </a-cursor>
+        </a-camera>
+
+        <a-entity>
+            <a-entity>
+                <a-image src="#caliz" position="-0.1 1.6 -4.1" scale='0.4 0.6 0.5' on-mouseenter="scale: 1.5 1.5 1.5"
+                    visible="false"
+                    animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"></a-image>
+                <a-box position="-1.75 0.7 -3" scale="0.20 0.20 0.20" color="red" visible="false"
+                    animation__position="property: rotation; to: 180 360 0; dir: alternate; dur: 4000; loop: true">
+                </a-box>
+                <a-plane color="black" position="0 1 -2" width="2" height="0.25" class="options"
+                    change-scene="img: #interior2" sound="on: mouseenter; src: #campanas">
+                    <a-text value="Interior" color="gray" align="center">
+                    </a-text>
+                </a-plane>
+            </a-entity>
+            <a-entity>
+                <a-box position="-1.75 0.25 -3" scale="0.20 0.20 0.20" color="red"
+                    animation__position="property: rotation; to: 180 360 0; dir: alternate; dur: 4000; loop: true">
+                </a-box>
+                <a-plane color="black" position="0 0.7 -2" width="2" height="0.25" class="options"
+                    change-scene="img: #exterior" sound="on: mouseenter">
+                    <a-text value="Exterior" color="red" align="center">
+                    </a-text>
+                </a-plane>
+                <a-sky id="sky" src="#exterior"></a-sky>
+            </a-entity>
+        </a-entity>
+    </a-scene>
+</body>
+
+</html>
